@@ -1,0 +1,21 @@
+/**
+ * @param {string} address
+ * @return {string}
+ */
+var defangIPaddr = function(address) {
+    // Variables
+    let newAddress = []
+    // for each char in address
+    for (let i = 0; i < address.length; i++) {
+        // if char is a . -> push a [.] onto output array 
+        if (address[i] == '.') {
+            newAddress.push("[.]");
+        }
+        // else its a number so push onto array
+        else {
+            newAddress.push(address[i]); 
+        }
+    }
+    // return array joined together
+    return newAddress.join('');
+};
